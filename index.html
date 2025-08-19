@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="description" content="Hi, I’m Jane Doe — Web Developer, Data Science Enthusiast, Designer. Explore my work, skills, and experience.">
+  <meta property="og:title" content="Jane Doe | Portfolio">
+  <meta property="og:description" content="Explore Jane Doe’s work, skills, and experience.">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <title>Jane Doe | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Jane Doe</div>
+      <ul class="nav-links">
+        <li><a href="#about" aria-label="About">About</a></li>
+        <li><a href="#skills" aria-label="Skills">Skills</a></li>
+        <li><a href="#projects" aria-label="Projects">Projects</a></li>
+        <li><a href="#experience" aria-label="Experience">Experience</a></li>
+        <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        <li>
+          <button id="theme-toggle" aria-label="Toggle dark/light mode">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section" aria-label="Hero Section">
+      <canvas id="hero-bg"></canvas>
+      <div class="hero-content">
+        <h1>Hi, I’m <span class="highlight">Jane Doe</span></h1>
+        <h2 id="typewriter"></h2>
+        <button class="cta" id="view-work-btn">View My Work</button>
+      </div>
+      <div id="custom-cursor"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section" aria-label="About Section">
+      <div class="about-content fade-in">
+        <img src="assets/images/profile.jpg" alt="Jane Doe Profile" class="profile-img" loading="lazy">
+        <div>
+          <h2>About Me</h2>
+          <p>
+            Passionate web developer & data science enthusiast. I love crafting interactive experiences and beautiful interfaces.
+          </p>
+          <ul class="fun-facts">
+            <li><span class="fact-icon">🎸</span> Plays guitar</li>
+            <li><span class="fact-icon">🌍</span> Speaks 3 languages</li>
+            <li><span class="fact-icon">🧩</span> Puzzle solver</li>
+            <li><span class="fact-icon">🚴‍♂️</span> Cycling lover</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section" aria-label="Skills Section">
+      <h2>Skills</h2>
+      <div class="skills-bars fade-in">
+        <div class="skill-bar" data-skill="HTML">
+          <span>HTML</span>
+          <div class="bar"><div class="progress" data-progress="95"></div></div>
+        </div>
+        <div class="skill-bar" data-skill="CSS">
+          <span>CSS</span>
+          <div class="bar"><div class="progress" data-progress="90"></div></div>
+        </div>
+        <div class="skill-bar" data-skill="JavaScript">
+          <span>JavaScript</span>
+          <div class="bar"><div class="progress" data-progress="85"></div></div>
+        </div>
+        <div class="skill-bar" data-skill="Python">
+          <span>Python</span>
+          <div class="bar"><div class="progress" data-progress="80"></div></div>
+        </div>
+      </div>
+      <div class="skills-cards fade-in">
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">React</div>
+          <div class="card-back">Proficient</div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">Node.js</div>
+          <div class="card-back">Intermediate</div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">SQL</div>
+          <div class="card-back">Advanced</div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">Figma</div>
+          <div class="card-back">Proficient</div>
+        </div>
+      </div>
+      <div class="radial-chart fade-in">
+        <canvas id="skills-radial"></canvas>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section" aria-label="Projects Section">
+      <h2>Projects</h2>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="web">Web</button>
+        <button class="filter-btn" data-category="data">Data Science</button>
+        <button class="filter-btn" data-category="design">Design</button>
+      </div>
+      <div class="projects-grid fade-in">
+        <!-- Example Project Card -->
+        <div class="project-card" data-category="web">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project1.png" alt="Project 1 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project1" target="_blank" class="overlay-btn" aria-label="GitHub">GitHub</a>
+              <a href="https://project1-demo.com" target="_blank" class="overlay-btn" aria-label="Live Demo">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Portfolio Website</h3>
+            <p>Modern & responsive portfolio site built with HTML, CSS, JS.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="data">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project2.png" alt="Project 2 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project2" target="_blank" class="overlay-btn">GitHub</a>
+              <a href="https://project2-demo.com" target="_blank" class="overlay-btn">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Data Visualizer</h3>
+            <p>Interactive data visualization dashboard in vanilla JS.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>Canvas</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="design">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project3.png" alt="Project 3 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project3" target="_blank" class="overlay-btn">GitHub</a>
+              <a href="https://project3-demo.com" target="_blank" class="overlay-btn">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Brand Style Guide</h3>
+            <p>Comprehensive style guide for a startup brand.</p>
+            <div class="project-tags">
+              <span>Figma</span><span>Design</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project4.png" alt="Project 4 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project4" target="_blank" class="overlay-btn">GitHub</a>
+              <a href="https://project4-demo.com" target="_blank" class="overlay-btn">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Task Manager</h3>
+            <p>Simple & fast task manager app for productivity.</p>
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="data">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project5.png" alt="Project 5 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project5" target="_blank" class="overlay-btn">GitHub</a>
+              <a href="https://project5-demo.com" target="_blank" class="overlay-btn">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>ML Predictor</h3>
+            <p>Machine learning model visualizer and predictor.</p>
+            <div class="project-tags">
+              <span>Python</span><span>JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-category="design">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project6.png" alt="Project 6 Screenshot" loading="lazy">
+            <div class="project-overlay">
+              <a href="https://github.com/janedoe/project6" target="_blank" class="overlay-btn">GitHub</a>
+              <a href="https://project6-demo.com" target="_blank" class="overlay-btn">Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Logo Pack</h3>
+            <p>Collection of 20+ modern logos for various brands.</p>
+            <div class="project-tags">
+              <span>Design</span><span>Branding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section" aria-label="Experience Section">
+      <h2>Experience</h2>
+      <div class="timeline fade-in">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2022–Present</span>
+            <h3>Frontend Developer</h3>
+            <p>ABC Tech | Building scalable web apps.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2021–2022</span>
+            <h3>Data Science Intern</h3>
+            <p>XYZ Analytics | ML models & data visualization.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2018–2021</span>
+            <h3>BSc Computer Science</h3>
+            <p>State University | GPA: 3.8</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" aria-label="Contact Section">
+      <h2>Contact</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+          <span class="error" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+          <span class="error" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required aria-required="true"></textarea>
+          <span class="error" id="message-error"></span>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <span class="form-status" id="form-status"></span>
+      </form>
+      <div class="contact-buttons">
+        <a href="https://linkedin.com/in/janedoe" target="_blank" aria-label="LinkedIn" class="contact-btn">LinkedIn</a>
+        <a href="https://github.com/janedoe" target="_blank" aria-label="GitHub" class="contact-btn">GitHub</a>
+        <a href="mailto:jane.doe@email.com" aria-label="Email" class="contact-btn">Email</a>
+        <a href="assets/JaneDoe_Resume.pdf" download class="contact-btn animated-cv" aria-label="Download CV">Download CV</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      &copy; <span id="year"></span> Jane Doe. All rights reserved.
+    </div>
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
