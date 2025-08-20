@@ -3,288 +3,289 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Hi, I’m Jane Doe — Web Developer, Data Science Enthusiast, Designer. Explore my work, skills, and experience.">
+  <title>Hi, I’m Jane Doe | Portfolio</title>
+  <meta name="description" content="Jane Doe - Web Developer, Data Science Enthusiast & Designer. Explore projects, skills, and contact info.">
   <meta property="og:title" content="Jane Doe | Portfolio">
-  <meta property="og:description" content="Explore Jane Doe’s work, skills, and experience.">
-  <meta property="og:image" content="assets/images/og-image.png">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="assets/images/favicon.ico">
-  <title>Jane Doe | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:description" content="Modern, interactive personal portfolio.">
+  <meta property="og:image" content="assets/profile.jpg">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">Jane Doe</div>
       <ul class="nav-links">
-        <li><a href="#about" aria-label="About">About</a></li>
-        <li><a href="#skills" aria-label="Skills">Skills</a></li>
-        <li><a href="#projects" aria-label="Projects">Projects</a></li>
-        <li><a href="#experience" aria-label="Experience">Experience</a></li>
-        <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        <li><a href="#about" tabindex="0">About</a></li>
+        <li><a href="#skills" tabindex="0">Skills</a></li>
+        <li><a href="#projects" tabindex="0">Projects</a></li>
+        <li><a href="#experience" tabindex="0">Experience</a></li>
+        <li><a href="#contact" tabindex="0">Contact</a></li>
         <li>
           <button id="theme-toggle" aria-label="Toggle dark/light mode">
-            <span id="theme-icon">🌙</span>
+            <span class="theme-icon"></span>
           </button>
         </li>
       </ul>
     </nav>
   </header>
-
   <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section" aria-label="Hero Section">
-      <canvas id="hero-bg"></canvas>
+    <section id="hero" class="section hero-section" aria-label="Hero Section">
+      <canvas id="hero-bg" aria-hidden="true"></canvas>
       <div class="hero-content">
         <h1>Hi, I’m <span class="highlight">Jane Doe</span></h1>
-        <h2 id="typewriter"></h2>
-        <button class="cta" id="view-work-btn">View My Work</button>
+        <h2 class="typewriter" aria-label="Roles">
+          <span id="typewriter-roles"></span>
+        </h2>
+        <button class="cta" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+          View My Work
+        </button>
       </div>
       <div id="custom-cursor"></div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section" aria-label="About Section">
-      <div class="about-content fade-in">
-        <img src="assets/images/profile.jpg" alt="Jane Doe Profile" class="profile-img" loading="lazy">
-        <div>
+    <section id="about" class="section about-section" aria-label="About Me">
+      <div class="about-container">
+        <img src="assets/profile.jpg" alt="Profile" class="profile-img" loading="lazy">
+        <div class="about-bio">
           <h2>About Me</h2>
-          <p>
-            Passionate web developer & data science enthusiast. I love crafting interactive experiences and beautiful interfaces.
-          </p>
+          <p>Passionate developer and lifelong learner. I love creating beautiful, functional web experiences and exploring the boundaries of technology and design.</p>
           <ul class="fun-facts">
-            <li><span class="fact-icon">🎸</span> Plays guitar</li>
-            <li><span class="fact-icon">🌍</span> Speaks 3 languages</li>
-            <li><span class="fact-icon">🧩</span> Puzzle solver</li>
-            <li><span class="fact-icon">🚴‍♂️</span> Cycling lover</li>
+            <li><span class="icon">🌎</span> Visited 12 countries</li>
+            <li><span class="icon">🎸</span> Plays guitar in a band</li>
+            <li><span class="icon">☕</span> Coffee aficionado</li>
+            <li><span class="icon">🐶</span> Proud dog parent</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section" aria-label="Skills Section">
+    <section id="skills" class="section skills-section" aria-label="Skills">
       <h2>Skills</h2>
-      <div class="skills-bars fade-in">
-        <div class="skill-bar" data-skill="HTML">
-          <span>HTML</span>
-          <div class="bar"><div class="progress" data-progress="95"></div></div>
+      <div class="skills-bars">
+        <div class="bar" data-skill="HTML">
+          <span class="bar-title">HTML</span>
+          <div class="bar-bg"><div class="bar-fill" style="width:0"></div></div>
         </div>
-        <div class="skill-bar" data-skill="CSS">
-          <span>CSS</span>
-          <div class="bar"><div class="progress" data-progress="90"></div></div>
+        <div class="bar" data-skill="CSS">
+          <span class="bar-title">CSS</span>
+          <div class="bar-bg"><div class="bar-fill" style="width:0"></div></div>
         </div>
-        <div class="skill-bar" data-skill="JavaScript">
-          <span>JavaScript</span>
-          <div class="bar"><div class="progress" data-progress="85"></div></div>
+        <div class="bar" data-skill="JavaScript">
+          <span class="bar-title">JavaScript</span>
+          <div class="bar-bg"><div class="bar-fill" style="width:0"></div></div>
         </div>
-        <div class="skill-bar" data-skill="Python">
-          <span>Python</span>
-          <div class="bar"><div class="progress" data-progress="80"></div></div>
-        </div>
-      </div>
-      <div class="skills-cards fade-in">
-        <div class="skill-card" tabindex="0">
-          <div class="card-front">React</div>
-          <div class="card-back">Proficient</div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <div class="card-front">Node.js</div>
-          <div class="card-back">Intermediate</div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <div class="card-front">SQL</div>
-          <div class="card-back">Advanced</div>
-        </div>
-        <div class="skill-card" tabindex="0">
-          <div class="card-front">Figma</div>
-          <div class="card-back">Proficient</div>
+        <div class="bar" data-skill="Python">
+          <span class="bar-title">Python</span>
+          <div class="bar-bg"><div class="bar-fill" style="width:0"></div></div>
         </div>
       </div>
-      <div class="radial-chart fade-in">
-        <canvas id="skills-radial"></canvas>
+      <div class="skills-cards">
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">
+            <span class="skill-icon">💻</span>
+            <span>Frontend</span>
+          </div>
+          <div class="card-back">
+            <span>Advanced</span>
+          </div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">
+            <span class="skill-icon">🗄️</span>
+            <span>Backend</span>
+          </div>
+          <div class="card-back">
+            <span>Intermediate</span>
+          </div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">
+            <span class="skill-icon">📊</span>
+            <span>Data Science</span>
+          </div>
+          <div class="card-back">
+            <span>Intermediate</span>
+          </div>
+        </div>
+        <div class="skill-card" tabindex="0">
+          <div class="card-front">
+            <span class="skill-icon">🎨</span>
+            <span>UI/UX</span>
+          </div>
+          <div class="card-back">
+            <span>Advanced</span>
+          </div>
+        </div>
+      </div>
+      <div class="radial-chart-container">
+        <canvas id="skills-radial-chart" width="220" height="220" aria-label="Skills Radar Chart"></canvas>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section" aria-label="Projects Section">
+    <section id="projects" class="section projects-section" aria-label="Projects">
       <h2>Projects</h2>
-      <div class="projects-filter">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="web">Web</button>
-        <button class="filter-btn" data-category="data">Data Science</button>
-        <button class="filter-btn" data-category="design">Design</button>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="data">Data Science</button>
       </div>
-      <div class="projects-grid fade-in">
-        <!-- Example Project Card -->
-        <div class="project-card" data-category="web">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project1.png" alt="Project 1 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project1" target="_blank" class="overlay-btn" aria-label="GitHub">GitHub</a>
-              <a href="https://project1-demo.com" target="_blank" class="overlay-btn" aria-label="Live Demo">Demo</a>
+      <div class="projects-grid">
+        <!-- Example project card -->
+        <div class="project-card" data-category="frontend">
+          <div class="card-img-container">
+            <img src="assets/project1.jpg" alt="Project 1" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project1" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project1-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
+          <div class="card-content">
             <h3>Portfolio Website</h3>
-            <p>Modern & responsive portfolio site built with HTML, CSS, JS.</p>
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span><span>JS</span>
-            </div>
+            <p>Modern, responsive portfolio built with HTML, CSS, and JS.</p>
+            <div class="tags"><span>#frontend</span><span>#responsive</span></div>
           </div>
         </div>
         <div class="project-card" data-category="data">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project2.png" alt="Project 2 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project2" target="_blank" class="overlay-btn">GitHub</a>
-              <a href="https://project2-demo.com" target="_blank" class="overlay-btn">Demo</a>
+          <div class="card-img-container">
+            <img src="assets/project2.jpg" alt="Project 2" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project2" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project2-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Data Visualizer</h3>
-            <p>Interactive data visualization dashboard in vanilla JS.</p>
-            <div class="project-tags">
-              <span>JavaScript</span><span>Canvas</span>
-            </div>
+          <div class="card-content">
+            <h3>DataViz Dashboard</h3>
+            <p>Interactive dashboard for visualizing datasets.</p>
+            <div class="tags"><span>#data</span><span>#visualization</span></div>
           </div>
         </div>
-        <div class="project-card" data-category="design">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project3.png" alt="Project 3 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project3" target="_blank" class="overlay-btn">GitHub</a>
-              <a href="https://project3-demo.com" target="_blank" class="overlay-btn">Demo</a>
+        <div class="project-card" data-category="backend">
+          <div class="card-img-container">
+            <img src="assets/project3.jpg" alt="Project 3" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project3" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project3-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Brand Style Guide</h3>
-            <p>Comprehensive style guide for a startup brand.</p>
-            <div class="project-tags">
-              <span>Figma</span><span>Design</span>
-            </div>
+          <div class="card-content">
+            <h3>API Server</h3>
+            <p>RESTful API for managing resources and authentication.</p>
+            <div class="tags"><span>#backend</span><span>#api</span></div>
           </div>
         </div>
-        <div class="project-card" data-category="web">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project4.png" alt="Project 4 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project4" target="_blank" class="overlay-btn">GitHub</a>
-              <a href="https://project4-demo.com" target="_blank" class="overlay-btn">Demo</a>
+        <div class="project-card" data-category="frontend">
+          <div class="card-img-container">
+            <img src="assets/project4.jpg" alt="Project 4" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project4" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project4-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Task Manager</h3>
-            <p>Simple & fast task manager app for productivity.</p>
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span><span>JS</span>
-            </div>
+          <div class="card-content">
+            <h3>Landing Page</h3>
+            <p>High-converting landing page for startups.</p>
+            <div class="tags"><span>#frontend</span><span>#uiux</span></div>
           </div>
         </div>
         <div class="project-card" data-category="data">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project5.png" alt="Project 5 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project5" target="_blank" class="overlay-btn">GitHub</a>
-              <a href="https://project5-demo.com" target="_blank" class="overlay-btn">Demo</a>
+          <div class="card-img-container">
+            <img src="assets/project5.jpg" alt="Project 5" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project5" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project5-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
+          <div class="card-content">
             <h3>ML Predictor</h3>
-            <p>Machine learning model visualizer and predictor.</p>
-            <div class="project-tags">
-              <span>Python</span><span>JS</span>
-            </div>
+            <p>Machine learning model for predictions & analytics.</p>
+            <div class="tags"><span>#data</span><span>#ml</span></div>
           </div>
         </div>
-        <div class="project-card" data-category="design">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project6.png" alt="Project 6 Screenshot" loading="lazy">
-            <div class="project-overlay">
-              <a href="https://github.com/janedoe/project6" target="_blank" class="overlay-btn">GitHub</a>
-              <a href="https://project6-demo.com" target="_blank" class="overlay-btn">Demo</a>
+        <div class="project-card" data-category="backend">
+          <div class="card-img-container">
+            <img src="assets/project6.jpg" alt="Project 6" loading="lazy">
+            <div class="card-overlay">
+              <a href="https://github.com/janedoe/project6" class="card-btn" target="_blank" rel="noopener" aria-label="GitHub"><span>GitHub</span></a>
+              <a href="https://project6-demo.com" class="card-btn" target="_blank" rel="noopener" aria-label="Live Demo"><span>Demo</span></a>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Logo Pack</h3>
-            <p>Collection of 20+ modern logos for various brands.</p>
-            <div class="project-tags">
-              <span>Design</span><span>Branding</span>
-            </div>
+          <div class="card-content">
+            <h3>Auth System</h3>
+            <p>Secure authentication and user management platform.</p>
+            <div class="tags"><span>#backend</span><span>#security</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section" aria-label="Experience Section">
+    <section id="experience" class="section experience-section" aria-label="Experience Timeline">
       <h2>Experience</h2>
-      <div class="timeline fade-in">
+      <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2022–Present</span>
-            <h3>Frontend Developer</h3>
-            <p>ABC Tech | Building scalable web apps.</p>
+            <span class="timeline-date">2024 - Present</span>
+            <h3>Software Engineer @ TechCorp</h3>
+            <p>Working on scalable frontend architectures and cloud APIs.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2021–2022</span>
-            <h3>Data Science Intern</h3>
-            <p>XYZ Analytics | ML models & data visualization.</p>
+            <span class="timeline-date">2023 - 2024</span>
+            <h3>Data Science Intern @ DataX</h3>
+            <p>Built data pipelines and interactive dashboards for analytics.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-dot"></div>
+          <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2018–2021</span>
+            <span class="timeline-date">2021 - 2023</span>
             <h3>BSc Computer Science</h3>
-            <p>State University | GPA: 3.8</p>
+            <p>Graduated with honors, specialized in web technologies and ML.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section" aria-label="Contact Section">
-      <h2>Contact</h2>
+    <section id="contact" class="section contact-section" aria-label="Contact">
+      <h2>Contact Me</h2>
       <form id="contact-form" novalidate>
-        <div class="form-group">
+        <div class="form-field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
-          <span class="error" id="name-error"></span>
+          <input type="text" id="name" name="name" aria-required="true" required>
+          <span class="error-msg" id="name-error"></span>
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
-          <span class="error" id="email-error"></span>
+          <input type="email" id="email" name="email" aria-required="true" required>
+          <span class="error-msg" id="email-error"></span>
         </div>
-        <div class="form-group">
+        <div class="form-field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" required aria-required="true"></textarea>
-          <span class="error" id="message-error"></span>
+          <textarea id="message" name="message" rows="4" aria-required="true" required></textarea>
+          <span class="error-msg" id="message-error"></span>
         </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-        <span class="form-status" id="form-status"></span>
+        <button type="submit" class="form-submit-btn">Send Message</button>
+        <div id="form-status" aria-live="polite"></div>
       </form>
       <div class="contact-buttons">
-        <a href="https://linkedin.com/in/janedoe" target="_blank" aria-label="LinkedIn" class="contact-btn">LinkedIn</a>
-        <a href="https://github.com/janedoe" target="_blank" aria-label="GitHub" class="contact-btn">GitHub</a>
-        <a href="mailto:jane.doe@email.com" aria-label="Email" class="contact-btn">Email</a>
-        <a href="assets/JaneDoe_Resume.pdf" download class="contact-btn animated-cv" aria-label="Download CV">Download CV</a>
+        <a href="https://linkedin.com/in/janedoe" target="_blank" rel="noopener" class="contact-btn" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/janedoe" target="_blank" rel="noopener" class="contact-btn" aria-label="GitHub">GitHub</a>
+        <a href="mailto:jane.doe@email.com" class="contact-btn" aria-label="Email">Email</a>
+        <a href="assets/jane_doe_resume.pdf" download class="contact-btn resume-btn" aria-label="Download CV">Download CV</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
-      &copy; <span id="year"></span> Jane Doe. All rights reserved.
+      <span>© 2025 Jane Doe. All rights reserved.</span>
     </div>
     <button id="back-to-top" aria-label="Back to top">↑</button>
   </footer>
-
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
